@@ -1,0 +1,112 @@
+body {
+	background-color: #888;
+	overflow: hidden;
+}
+
+#options {
+	display: block;
+	border: #77F 5px solid;
+	height: 100px;
+	width: 320px;
+	padding: 40px;
+	margin: 0 auto;
+	margin-top: 300px;
+	background-color: #fff;
+	text-align: center;
+}
+
+#options button {
+	margin: 20px;
+}
+
+#cards {
+	display: none;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+#win {
+	display: none;
+	border: #77F 5px solid;
+	width: 300px;
+	margin: 0 auto;
+	background-color: #fff;
+	text-align: center;
+	padding: 50px;
+	position: absolute;
+	top:300px;
+}
+
+ 
+
+#cards img {
+	width: 160px;
+	height: 160px;
+	padding: 20px;
+	border: #77F 5px solid;
+	background-color: #fff;
+	transform: rotateY(180deg);
+	border: #77F 5px solid;
+}
+
+ 
+.clear {
+	clear: both;
+}
+
+.block {
+	-webkit-perspective: 1000px;
+	perspective: 1000px;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	display: inline-block; width : 200px;
+	height: 200px;
+	cursor: pointer;
+	margin: 20px;
+	width: 200px;
+}
+
+.card {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transition: all 600ms;
+	transition: all 600ms;
+	z-index: -20;
+}
+
+.card div {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-image: url("1.svg");
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.card .back {
+	height: 210px;
+	width: 210px;
+	background: #77F;
+}
+
+input[type=checkbox] {
+	display: none;
+}
+
+:checked+.card {
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+}
+
+.move{
+	animation:cardmove 2.5s;
+}
+
+@keyframes cardmove
+{
+	from {margin-top:0;}
+	to {margin-top:2000px;}
+}
